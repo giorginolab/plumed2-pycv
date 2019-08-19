@@ -400,7 +400,7 @@ void PythonCV::check_dim(py::array_t<pycv_t> grad) {
   if(grad.ndim() != 2 ||
       grad.shape(0) != natoms ||
       grad.shape(1) != 3) {
-    log.printf("Error: wrong shape for the gradient return argument: should be (natoms=%d,3), received %d x %d\n",
+    log.printf("Error: wrong shape for the gradient return argument: should be (natoms=%d,3), received %ld x %ld\n",
                natoms, grad.shape(0), grad.shape(1));
     error("Python CV returned wrong gradient shape error");
   }

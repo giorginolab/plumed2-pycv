@@ -8867,18 +8867,6 @@ pycv_ok=true
 if test -f src/pycv.on ; then
    { $as_echo "$as_me:${as_lineno-$LINENO}: Performing PYCV-related checks with Python set to: $PYTHON_BIN" >&5
 $as_echo "$as_me: Performing PYCV-related checks with Python set to: $PYTHON_BIN" >&6;}
-   { $as_echo "$as_me:${as_lineno-$LINENO}: checking support for PYCV required python modules (jax)" >&5
-$as_echo_n "checking support for PYCV required python modules (jax)... " >&6; }
-   if ! "$PYTHON_BIN" -c 'import jax'  1>/dev/null 2>/dev/null ; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-$as_echo "no" >&6; }
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: JAX module not found. Install with \"pip3 install jax\". Continuing anyway." >&5
-$as_echo "$as_me: WARNING: JAX module not found. Install with \"pip3 install jax\". Continuing anyway." >&2;}
-      # pycv_ok=false
-   else
-      { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-$as_echo "yes" >&6; }
-   fi
    # Extract the first word of "python3-config", so it can be a program name with args.
 set dummy python3-config; ac_word=$2
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
@@ -8922,6 +8910,30 @@ fi
 
    if test "$python3_config" == missing ; then
       pycv_ok=false
+   fi
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking support for PYCV required python modules (numpy)" >&5
+$as_echo_n "checking support for PYCV required python modules (numpy)... " >&6; }
+   if ! "$PYTHON_BIN" -c 'import numpy'  1>/dev/null 2>/dev/null ; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+$as_echo "no" >&6; }
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: numpy not found. Install with \"pip3 install numpy\". Disabling PYCV." >&5
+$as_echo "$as_me: WARNING: numpy not found. Install with \"pip3 install numpy\". Disabling PYCV." >&2;}
+      pycv_ok=false
+   else
+      { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+$as_echo "yes" >&6; }
+   fi
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking support for PYCV optional python modules (jax)" >&5
+$as_echo_n "checking support for PYCV optional python modules (jax)... " >&6; }
+   if ! "$PYTHON_BIN" -c 'import jax'  1>/dev/null 2>/dev/null ; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+$as_echo "no" >&6; }
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: JAX module not found. Install with \"pip3 install jax\". Continuing anyway." >&5
+$as_echo "$as_me: WARNING: JAX module not found. Install with \"pip3 install jax\". Continuing anyway." >&2;}
+      #pycv_ok=false
+   else
+      { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+$as_echo "yes" >&6; }
    fi
    if test "$pycv_ok" == false ; then
       { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: disabling PYCV module; see possible reasons above" >&5

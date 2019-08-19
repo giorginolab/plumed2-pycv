@@ -218,8 +218,8 @@ void PythonFunction::calculate() {
 void PythonFunction::check_dim(py::array_t<pycv_t> grad) {
   if(grad.ndim() != 1 ||
       grad.shape(0) != nargs) {
-    log.printf("Error: wrong shape for the gradient return argument: should be (nargs=%d), received %d \n",
-               nargs, grad.shape(0));
+    log.printf("Error: wrong shape for the gradient return argument: should be (nargs=%lu), received %ld \n",
+               (unsigned long) nargs, grad.shape(0));
     error("Python CV returned wrong gradient shape error");
   }
 }
