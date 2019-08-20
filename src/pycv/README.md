@@ -52,18 +52,17 @@ You will also need to install `numpy`, either via `pip3 install
 numpy` or your distribution's packages.
 
 Automatic differentiation examples require the JAX library: install
-it with `pip3 install jax`. 
+it with `pip3 install jax jaxlib`. 
 
 
 
 Installation
 ------------------------------------
 
-Follow the usual PLUMED 2 configuration procedure, with added
-Python-specific flags:
+Follow the usual PLUMED 2 configuration procedure:
 
 ```bash
-./configure --enable-modules=+pycv --enable-python PYTHON_BIN=python3
+./configure --enable-modules=+pycv 
 ```
 
 It is also possible to compile the module as a `LOAD`-able dynamic
@@ -177,7 +176,8 @@ Toni Giorgino <toni.giorgino@cnr.it>
 Citation
 ------------------------------------
 
-Giorgino T. PYCV: Python-based Rapid Collective Variable Development for PLUMED 2. (In preparation)
+Giorgino T. PYCV: a PLUMED 2 Module Enabling the Rapid Prototyping of
+Collective Variables in Python (In preparation)
 
 
 Copyright
