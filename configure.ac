@@ -799,18 +799,18 @@ from Cython.Build import cythonize
 fi
 
 # If pycv module is enabled, we need python3, python3-config and
-# jaxlib, and we need to add LDFLAGS. This may be useful too, but
-# looks overcomplicated to me.
-# https://www.gnu.org/software/autoconf-archive/ax_python_embed.html
+# jaxlib, and we need to add LDFLAGS. The following may be useful too, but
+# looks overcomplicated to me:
+# https://www.gnu.org/software/autoconf-archive/ax_python_devel.html
 pycv_ok=true
 if test -f src/pycv.on ; then
    AC_MSG_NOTICE([Performing PYCV-related checks])
-   AC_PATH_PROG([pycv_python3_config],[python3-config],[missing])
    AC_PATH_PROG([pycv_python3],[python3],[missing])
-   if test "$pycv_python3_config" == missing ; then
+   if test "$pycv_python3" == missing ; then
       pycv_ok=false
    fi
-   if test "$pycv_python3" == missing ; then
+   AC_PATH_PROG([pycv_python3_config],[python3-config],[missing])
+   if test "$pycv_python3_config" == missing ; then
       pycv_ok=false
    fi
    AC_MSG_CHECKING([support for PYCV required python modules (numpy)])
