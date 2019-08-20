@@ -3,5 +3,6 @@
 set -e
 set -x
 
+pyenv global 3.6
 pip3 install numpy
 pip3 install jax
