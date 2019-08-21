@@ -65,6 +65,9 @@ Follow the usual PLUMED 2 configuration procedure:
 ./configure --enable-modules=+pycv 
 ```
 
+Please inspect the configure messages to see if any missing dependency
+prevents PYCV from actually being enabled.
+
 It is also possible to compile the module as a `LOAD`-able dynamic
 object.  Once in the `src/pycv` directory, issue `make PYCV.so`
 (`PYCV.dylib` under OSX). The compilation step *should* pick

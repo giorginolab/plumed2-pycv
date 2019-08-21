@@ -184,15 +184,12 @@ work well with Conda under OSX (Homebrew's Python 3 is ok).  If you
 are feeling lucky, this may work:
 
 \verbatim
-./configure --enable-modules=+pycv --enable-python PYTHON_BIN=python3 LDFLAGS="`python3-config --ldflags`"
+pip3 install numpy jax jaxlib
+./configure --enable-modules=+pycv 
 \endverbatim
 
 At run time, you may need to set the `PYTHONHOME` or other
 environment libraries.
-
-Automatic differentiation examples require the JAX library: `pip3
-install jaxlib`.
-
 
 
 */
