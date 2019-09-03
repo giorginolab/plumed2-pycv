@@ -63,22 +63,35 @@ Follow the usual PLUMED 2 configuration procedure:
 
 ```bash
 ./configure --enable-modules=+pycv 
+make -j4
+make install   # optional
 ```
 
 Please inspect the configure messages to see if any missing dependency
-prevents PYCV from actually being enabled.
+prevents PYCV from actually being enabled. Verify the successful installation
+with e.g.
 
-It is also possible to compile the module as a `LOAD`-able dynamic
+    ./src/lib/plumed-static manual --action PYTHONCV
+
+which should return the manual for `PYTHONCV`. (The `plumed-static`
+executable should work even without installation.)
+
+(It is also possible to compile the module as a `LOAD`-able dynamic
 object.  Once in the `src/pycv` directory, issue `make PYCV.so`
 (`PYCV.dylib` under OSX). The compilation step *should* pick
 Python-specific flags as long as the correct `python3-config`
-executable is in your path.
+executable is in your path.)
 
 
 Quickstart
 ------------------------------------
 
-Here's a quick example to whet your appetite (regression test `rt-jax2`).
+Here's a quick example to whet your appetite, following the regression test `rt-jax2`.
+
+    export PLUMED_PROGRAM_NAME=$PWD/src/lib/plumed-static 
+    make -C regtest/pycv/rt-jax2
+
+The files in `regtest/pycv/rt-jax2` are reproduced here:
 
 **File plumed.dat**
 
