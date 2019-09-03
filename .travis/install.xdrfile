@@ -6,7 +6,7 @@ set -x
 cd "$(mktemp -dt plumed.XXXXXX)"
 
 echo "installing xdrfile library"
-wget ftp://ftp.gromacs.org/pub/contrib/xdrfile-1.1.4.tar.gz
+wget http://ftp.gromacs.org/pub/contrib/xdrfile-1.1.4.tar.gz
 # xdrfile was removed from gromacs ftp
 # as a workaround I added a copy to people.sissa.it/~bussi/plumed
 # this complies with its license
