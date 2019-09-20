@@ -15,4 +15,4 @@ url: https://giorginolab.github.io/plumed2-pycv/
 show_downloads: false
 markdown: kramdown
 google_analytics: nil
-theme: jekyll-theme-architect
+theme: jekyll-theme-minimal
