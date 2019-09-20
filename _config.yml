@@ -1,0 +1,17 @@
+permalink: /:categories/:year/:month/:day/:title
+exclude: ["License.md", "Makefile", "Gemfile", "Gemfile.lock"]
+
+author: 
+  name: Toni Giorgino
+  email: toni.giorgino@gmail.com
+  github: tonigi
+
+title: The PYCV module for PLUMED 2
+description: PYCV enables PLUMED2 Collective Variables (CVs) and arbitrary functions to be defined and auto-differentiated in the Python language. 
+logo: /images/logo.svg
+repository: giorginolab/plumed2-pycv
+
+show_downloads: true
+markdown: kramdown
+google_analytics: nil
+theme: jekyll-theme-minimal
