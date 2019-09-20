@@ -6,7 +6,7 @@ author:
   email: toni.giorgino@gmail.com
   github: tonigi
 
-title: The PYCV module for PLUMED 2
+# title: The PYCV module for PLUMED 2
 description: Enable the implementation of collective variables (CVs) and functions in the Python language.
 logo: /images/logo.png
 repository: giorginolab/plumed2-pycv
