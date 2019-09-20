@@ -24,13 +24,16 @@
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
+	<p><a href="https://github.com/{{site.repository}}">View On GitHub</a> </p>
+	
         {% if site.show_downloads %}
         <ul class="downloads">
-          <li><a href="https://github.com/maze-code/plumed2-maze/archive/master.zip">Download <strong>ZIP File</strong></a></li>
+	  <li><a href="https://github.com/{{site.repository}}/releases/latest/download/package.zip">Download <strong>ZIP File</strong></a></li>
           <li><a
-              href="https://github.com/maze-code/plumed2-maze/archive/master.tar.gz">Download <strong>TAR Ball</strong></a></li>
+              href="https://github.com/{{site.repository}}/releases/latest/download/package.tar.gz">Download <strong>TAR Ball</strong></a></li>
+
           <li><a
-              href="https://github.com/maze-code/plumed2-maze/">View On <strong>GitHub</strong></a></li>
+              href="https://github.com/{{site.repository}}">View On <strong>GitHub</strong></a></li>
         </ul>
         {% endif %}
         

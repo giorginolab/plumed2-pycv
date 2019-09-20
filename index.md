@@ -5,8 +5,7 @@ layout: default
 The PYCV module for PLUMED 2
 ====================================
 
-Enable the implementation of collective variables (CVs) and
-functions in the Python language.
+PYCV enables PLUMED2 Collective Variables (CVs) and arbitrary functions to be defined and auto-differentiated in the Python language. 
 
 Advantages of using PYCV over standard development of CVs in C++ are:
  1. functions may be prototyped in  high-level code, using
