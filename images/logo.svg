@@ -11,15 +11,25 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="50.680038mm"
-   height="22.034792mm"
-   viewBox="0 0 50.680039 22.034791"
+   width="48.165039mm"
+   height="31.451641mm"
+   viewBox="0 0 48.165039 31.451639"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 5c3e80d, 2017-08-06"
-   sodipodi:docname="logo.svg">
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/Users/toni/compile/plumed2-pycv-gh-pages/images/logo.png"
+   inkscape:export-xdpi="150"
+   inkscape:export-ydpi="150">
   <defs
      id="defs2">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 11.017395 : 1"
+       inkscape:vp_y="0 : 999.99999 : 0"
+       inkscape:vp_z="50.680038 : 11.017395 : 1"
+       inkscape:persp3d-origin="25.340019 : 7.3449302 : 1"
+       id="perspective832" />
     <linearGradient
        inkscape:collect="always"
        id="linearGradient2419">
@@ -49,7 +59,17 @@
        x2="101.43648"
        y2="45.712765"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(1.146319,-2.7232115)" />
+       gradientTransform="translate(2.7546932,-13.034485)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2419"
+       id="linearGradient925"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.9883533,0,0,1.0117839,1.1329672,-2.7553008)"
+       x1="62.909203"
+       y1="45.712765"
+       x2="101.43648"
+       y2="45.712765" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -58,9 +78,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.6203867"
-     inkscape:cx="92.162758"
-     inkscape:cy="17.225181"
+     inkscape:zoom="2.56"
+     inkscape:cx="50.123938"
+     inkscape:cy="11.730635"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -82,7 +102,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -90,7 +110,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-63.688021,-32.815726)">
+     transform="translate(-65.296395,-22.504453)">
     <text
        xml:space="preserve"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.57777786px;line-height:125%;font-family:Perpetua;-inkscape-font-specification:'Perpetua, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient2421);fill-opacity:1;stroke:#d50505;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -104,5 +124,19 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.57777786px;font-family:Perpetua;-inkscape-font-specification:'Perpetua, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient2421);fill-opacity:1;stroke:#d50505;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          dx="0 0 1.51 -1.55"
          dy="0 0 0 0">PyCV</tspan></text>
+    <text
+       id="text923"
+       y="32.566521"
+       x="64.466553"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.79621601px;line-height:125%;font-family:Perpetua;-inkscape-font-specification:'Perpetua, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#140000;fill-opacity:1;stroke:none;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(1.011784,0.98835324)"><tspan
+         dy="0"
+         dx="0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.79621601px;font-family:Perpetua;-inkscape-font-specification:'Perpetua, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#140000;fill-opacity:1;stroke:none;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         y="32.566521"
+         x="64.466553"
+         id="tspan921"
+         sodipodi:role="line">Plumed2</tspan></text>
   </g>
 </svg>
