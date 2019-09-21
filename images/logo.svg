@@ -102,7 +102,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -126,16 +126,16 @@
          dy="0 0 0 0">PyCV</tspan></text>
     <text
        id="text923"
-       y="32.566521"
-       x="64.466553"
-       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.79621601px;line-height:125%;font-family:Perpetua;-inkscape-font-specification:'Perpetua, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#140000;fill-opacity:1;stroke:none;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       y="32.96843"
+       x="89.281433"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.94310236px;line-height:125%;font-family:Perpetua;-inkscape-font-specification:'Perpetua, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#140000;fill-opacity:1;stroke:none;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        xml:space="preserve"
        transform="scale(1.011784,0.98835324)"><tspan
          dy="0"
          dx="0"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.79621601px;font-family:Perpetua;-inkscape-font-specification:'Perpetua, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#140000;fill-opacity:1;stroke:none;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         y="32.566521"
-         x="64.466553"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.94310236px;font-family:Perpetua;-inkscape-font-specification:'Perpetua, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#140000;fill-opacity:1;stroke:none;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         y="32.96843"
+         x="89.281433"
          id="tspan921"
          sodipodi:role="line">Plumed2</tspan></text>
   </g>
