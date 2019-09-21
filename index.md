@@ -1,7 +1,3 @@
----
-layout: default
----
-
 The PYCV module for PLUMED 2
 ====================================
 
