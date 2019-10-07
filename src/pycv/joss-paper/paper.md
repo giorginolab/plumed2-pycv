@@ -29,22 +29,25 @@ or metadynamics [@torrie_nonphysical_1977; @laio_escaping_2002], which
 apply generalized forces to CVs to enhance the sampling of events
 otherwise not observable by direct simulation. CVs may be
 simple geometrical observables (distances, angles, torsions, etc.),
-but are often more complex functions designed to capture structural
+but often they are more complex functions designed to capture structural
 determinants, such as tertiary and quaternary structure of proteins,
 experimental observables, crystal symmetries, etc. [@branduardi_b_2007;
 @bonomi_integrative_2017; @pipolo_navigating_2017].
 
-Iterative development of CVs therefore occupies a large fraction of
-the effort in the exploration of molecular systems. On the one hand,
-the task has been largely facilitated by biasing libraries such as
-PLUMED [@tribello_plumed_2014], which provides pre-defined functions and a
-*lingua franca* to express CV combinations, atom groups and biasing
-schemes, and its active community [@the_plumed_consortium_promoting_2019].
-However, users willing to explore CVs beyond the pre-defined
-ones have to implement them in C++, together with the corresponding
-(often cumbersome) derivatives [@giorgino_how_2018]. Compiled code is
-unwieldy for iterative analysis, because it is relatively low-level,
-error-prone, and inconvenient in exploratory stages.
+Iterative development of CVs therefore accounts for most of the
+efforts associated with the exploration of molecular systems, and
+software packages implementing high-level directives to express
+biasing potentials and CVs markedly simplify the task.
+In this regard, the PLUMED library [@tribello_plumed_2014] is
+especially relevant because it provides numerous pre-defined
+functions, a *lingua franca* to express CV combinations, atom groups
+and biasing schemes, and an active community
+[@the_plumed_consortium_promoting_2019].  Users willing to explore CVs
+beyond the pre-defined ones have to implement them in C++, together
+with the corresponding (often cumbersome) derivatives
+[@giorgino_how_2018]. Compiled code is however unwieldy for iterative
+analysis, because it is relatively low-level, error-prone, and
+inconvenient in exploratory stages.
 
 This paper introduces **PYCV**, a module for the PLUMED 2 library
 which enables users to define CVs and arbitrary functions in the
@@ -141,7 +144,7 @@ def r_f(x):
 # Use JAX to auto-gradient it
 r_g = grad(r_f)
 
-# The CV function actually called
+# PLUMED will call the following function
 def r(x):
     return r_f(x), r_g(x)
 
@@ -150,14 +153,17 @@ def r(x):
 
 
 
-# Conclusion
+# Conclusions
 
 **PYCV** enables Python-based prototyping of CVs in PLUMED 2. This
 programming model may be an advantage over standard C++-based development in that
-(a) functions may be prototyped in high-level language, using extensive
-mathematical libraries, without boilerplate; (b) just-in-time
+
+1. functions may be prototyped in high-level language, using extensive
+mathematical libraries, without boilerplate;
+2. just-in-time
 compilation occurs transparently: code changes incur in no compilation
-and link delays; and (c) CV code may be automatically differentiated in
+and link delays; and
+3. CV code may be automatically differentiated in
 common cases.
 
 
