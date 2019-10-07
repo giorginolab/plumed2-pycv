@@ -113,10 +113,10 @@ fi;
 # Set journal specific variables
 
 outfile="${paper%.md}.pdf"
-logo="${journal}-logo.png"
+logo="logo.png"
 templateurl="https://raw.githubusercontent.com/openjournals/whedon/master/resources/latex.template"
 cslurl="https://raw.githubusercontent.com/openjournals/whedon/master/resources/apa.csl"
-logourl="https://github.com/openjournals/whedon/raw/master/resources/${journal}-logo.png"
+logourl="https://github.com/openjournals/whedon/raw/master/resources/joss/logo.png"
 
 # Set journal full name
 
