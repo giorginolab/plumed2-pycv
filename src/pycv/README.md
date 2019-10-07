@@ -185,7 +185,13 @@ Behavior with MPI, and JAX's GPU/TPU offloading are untested.
 Author
 ------------------------------------
 
-Toni Giorgino <toni.giorgino@cnr.it>
+Toni Giorgino <toni.giorgino@gmail.com>
+
+
+Contributing
+------------------------------------
+
+Please report bugs and ideas via this repository's *Issues*. 
 
 
 Citation

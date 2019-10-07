@@ -14,7 +14,7 @@ The module's documentation and build instructions are in the [README.md](src/pyc
 
 
 
-Please report bugs & ideas via this repository's *Issues*. PLUMED's original README is [here](README.md.upstream). 
+PLUMED's original README is [here](README.md.upstream). 
 
 
 
