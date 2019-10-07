@@ -27,7 +27,7 @@ simulated [@barducci_metadynamics_2011]. This is especially important
 when employing *biased sampling* techniques such as umbrella sampling
 or metadynamics [@torrie_nonphysical_1977; @laio_escaping_2002], which
 apply generalized forces to CVs to enhance the sampling of events
-otherwise not observable by direct simulation.   CVs may be
+otherwise not observable by direct simulation. CVs may be
 simple geometrical observables (distances, angles, torsions, etc.),
 but are often more complex functions designed to capture structural
 determinants, such as tertiary and quaternary structure of proteins,
