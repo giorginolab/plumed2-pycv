@@ -7,96 +7,108 @@ matrix:
 # this is the "master" one, it is going to update the manual every time
 # Variable PLUMED_ALL_TESTS=yes ensures that all the regtests can be run.
 # If some of them is not enabled, the whole suite will fail.
-  - name: Run all tests and build doc. All features enabled (system blas and lapack + asmjit)
+  - name: PYCV build, linux
     os: linux
-    dist: trusty
+    dist: bionic
     sudo: required
-    env: PLUMED_CC=mpicc PLUMED_CXX=mpic++ MAKEDOC=yes PLUMED_ALL_TESTS=yes LAPACK=yes ASMJIT=673dcefa
-  - name: Run all tests and scan coverage
-    os: linux
-    dist: trusty
-    sudo: required
-    env: PLUMED_CC=mpicc PLUMED_CXX=mpic++ MAKECOVERAGE=yes PLUMED_ALL_TESTS=yes
-  - name: Debug flags, no MPI
-    os: linux
-    dist: trusty
-    sudo: required
-    env: PLUMED_CC=gcc   PLUMED_CXX=g++    CONFIG_FLAGS="--enable-debug --enable-debug-glibcxx"
-  - name: Debug flags, MPI
-    os: linux
-    dist: trusty
-    sudo: required
-    env: PLUMED_CC=mpicc PLUMED_CXX=mpic++ CONFIG_FLAGS="--enable-debug --enable-debug-glibcxx"
-  - name: Cppcheck and codecheck
-    os: linux
-    dist: trusty
-    sudo: required
-    env: CPPCHECK=yes CPPCHECK_VERSION=1.88
-  - name: External blas with internal lapack
-    os: linux
-    if: branch =~ ^test- OR type IN(pull_request)
-    dist: trusty
-    sudo: required
-    env: PLUMED_CC=mpicc PLUMED_CXX=mpic++  PLUMED_CXXFLAGS=-O3 LAPACK=yes CONFIG_FLAGS="--disable-external-lapack"
-  - name: Docker image (ubuntu 17, with gcc6)
-    sudo: required
-    if: branch =~ ^test- OR type IN(pull_request)
-    services: docker
-    env: PLUMED_DOCKER=yes
-  - name: MacOS, serial build
+    if: branch =~ pycv
+    env: PLUMED_CC=gcc   PLUMED_CXX=g++ PYCV=yes CONFIG_FLAGS="--enable-modules=+pycv"
+  - name: PYCV build, OSX
     os: osx
-    if: branch =~ ^test- OR type IN(pull_request)
-    osx_image: xcode7.3
-    env: PLUMED_CC=clang PLUMED_CXX=clang++ PLUMED_CXXFLAGS=-O3
-# this should not be required. I add it since it looks like with OSX it does not work otherwise
-    cache:
-      directories:
-      - $HOME/.ccache
-  - name: MacOS, MPI build
-    os: osx
-    if: branch =~ ^test- OR type IN(pull_request)
-    osx_image: xcode7.3
-    env: PLUMED_CC=mpicc PLUMED_CXX=mpic++  PLUMED_CXXFLAGS=-O3
-# this should not be required. I add it since it looks like with OSX it does not work otherwise
-    cache:
-      directories:
-      - $HOME/.ccache
-  - name: MacPorts, default modules
-    os: osx
-    if: branch =~ ^test- OR type IN(pull_request)
-    osx_image: xcode7.3
-    env: PLUMED_MACPORTS="plumed" PLUMED_PYTHON="2.7 3.6 3.7"
-    cache:
-      directories:
-      - $HOME/.macports-ci-ccache
-  - name: MacPorts, all modules
-    os: osx
-    if: branch =~ ^test- OR type IN(pull_request)
-    osx_image: xcode7.3
-    env: PLUMED_MACPORTS="plumed +allmodules" PLUMED_PYTHON="2.7 3.6 3.7"
-    cache:
-      directories:
-      - $HOME/.macports-ci-ccache
-  - name: MacPorts 8.3, all modules
-    os: osx
-    osx_image: xcode8.3
-    env: PLUMED_MACPORTS="plumed +allmodules" PLUMED_PYTHON="2.7 3.6 3.7"
-    cache:
-      directories:
-      - $HOME/.macports-ci-ccache
-# linux conda package
-  - name: Conda build, linux
-    os: linux
-    if: branch =~ ^test- OR tag IS present OR type IN(pull_request) OR type IN(cron)
-    dist: trusty
-    sudo: required
-    env: PLUMED_CONDA=yes
-# osx conda package
-  - name: Conda build, MacOS
-    os: osx
-    if: branch =~ ^test- OR tag IS present OR type IN(pull_request) OR type IN(cron)
-    osx_image: xcode9.2
-    env: PLUMED_CONDA=yes
+    if: branch =~ pycv
+    env: PLUMED_CC=clang   PLUMED_CXX=clang++ PYCV=yes CONFIG_FLAGS="--enable-modules=+pycv"
+    
+#   - name: Run all tests and build doc. All features enabled (system blas and lapack + asmjit)
+#     os: linux
+#     dist: trusty
+#     sudo: required
+#     env: PLUMED_CC=mpicc PLUMED_CXX=mpic++ MAKEDOC=yes PLUMED_ALL_TESTS=yes LAPACK=yes ASMJIT=673dcefa
+#   - name: Run all tests and scan coverage
+#     os: linux
+#     dist: trusty
+#     sudo: required
+#     env: PLUMED_CC=mpicc PLUMED_CXX=mpic++ MAKECOVERAGE=yes PLUMED_ALL_TESTS=yes
+#   - name: Debug flags, no MPI
+#     os: linux
+#     dist: trusty
+#     sudo: required
+#     env: PLUMED_CC=gcc   PLUMED_CXX=g++    CONFIG_FLAGS="--enable-debug --enable-debug-glibcxx"
+#   - name: Debug flags, MPI
+#     os: linux
+#     dist: trusty
+#     sudo: required
+#     env: PLUMED_CC=mpicc PLUMED_CXX=mpic++ CONFIG_FLAGS="--enable-debug --enable-debug-glibcxx"
+#   - name: Cppcheck and codecheck
+#     os: linux
+#     dist: trusty
+#     sudo: required
+#     env: CPPCHECK=yes CPPCHECK_VERSION=1.88
+#   - name: External blas with internal lapack
+#     os: linux
+#     if: branch =~ ^test- OR type IN(pull_request)
+#     dist: trusty
+#     sudo: required
+#     env: PLUMED_CC=mpicc PLUMED_CXX=mpic++  PLUMED_CXXFLAGS=-O3 LAPACK=yes CONFIG_FLAGS="--disable-external-lapack"
+#   - name: Docker image (ubuntu 17, with gcc6)
+#     sudo: required
+#     if: branch =~ ^test- OR type IN(pull_request)
+#     services: docker
+#     env: PLUMED_DOCKER=yes
+#   - name: MacOS, serial build
+#     os: osx
+#     if: branch =~ ^test- OR type IN(pull_request)
+#     osx_image: xcode7.3
+#     env: PLUMED_CC=clang PLUMED_CXX=clang++ PLUMED_CXXFLAGS=-O3
+# # this should not be required. I add it since it looks like with OSX it does not work otherwise
+#     cache:
+#       directories:
+#       - $HOME/.ccache
+#   - name: MacOS, MPI build
+#     os: osx
+#     if: branch =~ ^test- OR type IN(pull_request)
+#     osx_image: xcode7.3
+#     env: PLUMED_CC=mpicc PLUMED_CXX=mpic++  PLUMED_CXXFLAGS=-O3
+# # this should not be required. I add it since it looks like with OSX it does not work otherwise
+#     cache:
+#       directories:
+#       - $HOME/.ccache
+#   - name: MacPorts, default modules
+#     os: osx
+#     if: branch =~ ^test- OR type IN(pull_request)
+#     osx_image: xcode7.3
+#     env: PLUMED_MACPORTS="plumed" PLUMED_PYTHON="2.7 3.6 3.7"
+#     cache:
+#       directories:
+#       - $HOME/.macports-ci-ccache
+#   - name: MacPorts, all modules
+#     os: osx
+#     if: branch =~ ^test- OR type IN(pull_request)
+#     osx_image: xcode7.3
+#     env: PLUMED_MACPORTS="plumed +allmodules" PLUMED_PYTHON="2.7 3.6 3.7"
+#     cache:
+#       directories:
+#       - $HOME/.macports-ci-ccache
+#   - name: MacPorts 8.3, all modules
+#     os: osx
+#     osx_image: xcode8.3
+#     env: PLUMED_MACPORTS="plumed +allmodules" PLUMED_PYTHON="2.7 3.6 3.7"
+#     cache:
+#       directories:
+#       - $HOME/.macports-ci-ccache
+# # linux conda package
+#   - name: Conda build, linux
+#     os: linux
+#     if: branch =~ ^test- OR tag IS present OR type IN(pull_request) OR type IN(cron)
+#     dist: trusty
+#     sudo: required
+#     env: PLUMED_CONDA=yes
+# # osx conda package
+#   - name: Conda build, MacOS
+#     os: osx
+#     if: branch =~ ^test- OR tag IS present OR type IN(pull_request) OR type IN(cron)
+#     osx_image: xcode9.2
+#     env: PLUMED_CONDA=yes
+
 # I don't put any mpi variant with macports since it takes too long to compile
 ## This command can be used to allow failures:
   allow_failures:
@@ -172,7 +184,9 @@ install:
 # I do it only when LD_LIBRARY_PATH is non blank, since otherwise clang gives problems
   - if test -n "$LD_LIBRARY_PATH" ; then PLUMED_LDFLAGS="-Wl,-rpath,$LD_LIBRARY_PATH" ; fi
 # arrayfire
-  - if test "$ARRAYFIRE" == yes; then ./.travis/install.arrayfire ; fi 
+  - if test "$ARRAYFIRE" == yes; then ./.travis/install.arrayfire ; fi
+# PYCV requirements
+  - if test "$PYCV" == yes; then ./.travis/install.pycv.prereqs ; fi
 # macports related stuff
 # configure macports
   - if test -n "$PLUMED_MACPORTS" ; then
