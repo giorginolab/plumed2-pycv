@@ -1,7 +1,8 @@
 The PYCV module for PLUMED 2
 ====================================
 
-[![plumID:19.075](https://www.plumed-nest.org/eggs/19/075/badge.svg)](https://www.plumed-nest.org/eggs/19/075/)
+[![plumID:19.075](https://www.plumed-nest.org/eggs/19/075/badge.svg)](https://www.plumed-nest.org/eggs/19/075/) [![DOI](https://joss.theoj.org/papers/10.21105/joss.01773/status.svg)](https://doi.org/10.21105/joss.01773)
+
 
 The [PYCV module](https://giorginolab.github.io/plumed2-pycv) enables
 PLUMED2 Collective Variables (CVs) and arbitrary functions to be
