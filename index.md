@@ -22,6 +22,11 @@ repository](https://github.com/giorginolab/plumed2-pycv/tree/v2.5.2-pycv/src/pyc
 code is in the `src/pycv` and `regtest/pycv` directories.
 
 
+> **Warning**
+> Since this work was first published, building under OSX has become increasingly problematic. Please contact me if you are using the platform.
+
+
+
 Documentation
 ------------------------------------
 
