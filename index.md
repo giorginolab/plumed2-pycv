@@ -22,10 +22,6 @@ repository](https://github.com/giorginolab/plumed2-pycv/tree/v2.5.2-pycv/src/pyc
 code is in the `src/pycv` and `regtest/pycv` directories.
 
 
-> **Warning**
-> Since this work was first published, building under OSX has become increasingly problematic. Please contact me if you are using the platform.
-
-
 
 Documentation
 ------------------------------------
@@ -54,8 +50,10 @@ Prerequisites
 ------------------------------------
 
 Python 3 is required. Under OSX, [Homebrew](https://brew.sh)'s Python
-3 package works well. The Conda version is problematic (slow
-compilation, linking failures).
+3 package works well. Conda also seems to work. Make sure you have 
+a Python version recent enough that this command works:
+
+    python3-config --embed --ldflags
 
 You will also need to install `numpy`, either via `pip3 install
 numpy` or your distribution's packages.
