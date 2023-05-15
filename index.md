@@ -21,9 +21,6 @@ in a [fork of the original
 repository](https://github.com/giorginolab/plumed2-pycv/tree/v2.5.2-pycv/src/pycv). All
 code is in the `src/pycv` and `regtest/pycv` directories.
 
-> **Warning**
-> The most updated branch is currently https://github.com/giorginolab/plumed2-pycv/tree/v2.8-pycv-devel **
-
 
 
 Documentation
@@ -69,13 +66,17 @@ it with `pip3 install jax jaxlib`.
 Installation
 ------------------------------------
 
-Follow the usual PLUMED 2 configuration procedure:
+Follow the usual PLUMED 2 configuration procedure, i.e. check-out the PYCV 
+repository and then:
 
 ```bash
 ./configure --enable-modules=+pycv 
 make -j4
 make install   # optional
 ```
+
+> **Warning**
+> The most updated branch is currently https://github.com/giorginolab/plumed2-pycv/tree/v2.8-pycv-devel
 
 Please inspect the configure messages to see if any missing dependency
 prevents PYCV from actually being enabled. Verify the successful installation
