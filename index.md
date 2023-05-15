@@ -21,6 +21,9 @@ in a [fork of the original
 repository](https://github.com/giorginolab/plumed2-pycv/tree/v2.5.2-pycv/src/pycv). All
 code is in the `src/pycv` and `regtest/pycv` directories.
 
+> **Warning**
+> The most updated branch is currently https://github.com/giorginolab/plumed2-pycv/tree/v2.8-pycv-devel **
+
 
 
 Documentation
