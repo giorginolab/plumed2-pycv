@@ -57,7 +57,7 @@
 !/sasa
 !/xdrfile
 !/s2cm
->>>>>>> v2.8.0
+!/pycv
 
 # And just ignore these files
 *.xxd
