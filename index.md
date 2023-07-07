@@ -85,6 +85,12 @@ In case your system has multiple python versions, you may select the one to be
 embedded adding the argument `pycv_python3_config=...` to `configure`. 
 For example: `./configure --enable-modules=+pycv pycv_python3_config=/bin/python3.10-config`.
 
+> **Warning**
+> Installation under Conda seems unexplicably complicated. For one,
+> Conda lacks a symbolic link that you can recreate with
+> `ln -s $CONDA_PREFIX/lib/libpython* $(python3-config --embed --configdir)`
+> But other linking problems remain, and they are being investigated.
+
 
 Test
 ----
