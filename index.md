@@ -55,12 +55,15 @@ a Python version recent enough that this command works:
 
     python3-config --embed --ldflags
 
-You will also need to install `numpy`, either via `pip3 install
-numpy` or your distribution's packages.
+You will also **need** to install `numpy`, either via `pip3 install
+numpy` or your distribution's packages. 
+
+> **Warning**
+> If `numpy` is not available, PYCV will be disabled in the `configure` stage.
 
 Automatic differentiation examples require the JAX library: install
-it with `pip3 install jax jaxlib`. 
-
+it with `pip3 install jax jaxlib`. That can be installed later,
+after building.
 
 
 Installation
@@ -75,11 +78,18 @@ make -j4
 make install   # optional
 ```
 
-> **Warning**
-> The most updated branch is currently https://github.com/giorginolab/plumed2-pycv/tree/v2.8-pycv-devel
-
 Please inspect the configure messages to see if any missing dependency
-prevents PYCV from actually being enabled. Verify the successful installation
+prevents PYCV from actually being enabled. 
+
+In case your system has multiple python versions, you may select the one to be
+embedded adding the argument `pycv_python3_config=...` to `configure`. 
+For example: `./configure --enable-modules=+pycv pycv_python3_config=/bin/python3.10-config`.
+
+
+Test
+----
+
+Verify the successful installation
 with e.g.
 
     ./src/lib/plumed-static manual --action PYTHONCV
@@ -87,11 +97,15 @@ with e.g.
 which should return the manual for `PYTHONCV`. (The `plumed-static`
 executable should work even without installation.)
 
-(It is also possible to compile the module as a `LOAD`-able dynamic
-object.  Once in the `src/pycv` directory, issue `make PYCV.so`
-(`PYCV.dylib` under OSX). The compilation step *should* pick
-Python-specific flags as long as the correct `python3-config`
-executable is in your path.)
+Next, try the regression tests: 
+
+    PLUMED_PROGRAM_NAME=$PWD/src/lib/plumed-static make -C regtest/pycv/
+
+The following Colab notebook should demonstrate all of the above
+(but may become outdated): [PyCV build and test](https://colab.research.google.com/drive/1rplro4KFc1uVSEOnbke-OlsjZnaoJIl_#scrollTo=CYnPecM71YIr)
+
+> **Note**
+> (It is also possible to compile the module as a `LOAD`-able dynamic object.  Once in the `src/pycv` directory, issue `make PYCV.so` (`PYCV.dylib` under OSX). The compilation step *should* pick Python-specific flags as long as the correct `python3-config` executable is in your path.)
 
 
 Quickstart
