@@ -73,6 +73,8 @@ Follow the usual PLUMED 2 configuration procedure, i.e. check-out the PYCV
 repository and then:
 
 ```bash
+git clone https://github.com/giorginolab/plumed2-pycv.git
+cd plumed2-pycv
 ./configure --enable-modules=+pycv 
 make -j4
 make install   # optional
@@ -85,11 +87,37 @@ In case your system has multiple python versions, you may select the one to be
 embedded adding the argument `pycv_python3_config=...` to `configure`. 
 For example: `./configure --enable-modules=+pycv pycv_python3_config=/bin/python3.10-config`.
 
-> **Warning**
-> Installation under Conda seems unexplicably complicated. For one,
-> Conda lacks a symbolic link that you can recreate with
-> `ln -s $CONDA_PREFIX/lib/libpython* $(python3-config --embed --configdir)`
-> But other linking problems remain, and they are being investigated.
+### Conda
+
+Installation under Conda seems unexplicably complicated. For one,
+Conda lacks a symbolic link that you can recreate with
+
+    ln -s $CONDA_PREFIX/lib/libpython* $(python3-config --embed --configdir)
+
+But other problems remain, and they are being investigated.
+On a clean miniconda environment with the `conda-forge` channel,
+the following combination worked at least partially:
+
+```bash
+conda create -n pycv -c conda-forge numpy python=3.10
+conda activate pycv
+conda install -c conda-forge compilers make
+ln -s $CONDA_PREFIX/lib/libpython* $(python3-config --embed --configdir)
+./configure --enable-modules=+pycv
+make -j4
+make -k
+```
+
+Which generates `plumed-runtime` and `plumed-static`, but not `plumed`.
+In practice:
+
+```bash
+pip install jax jaxlib
+PLUMED_PROGRAM_NAME=$PWD/src/lib/plumed-static make -C regtest/pycv/
+PLUMED_KERNEL=$PWD/src/lib/libplumedKernel.so PLUMED_PROGRAM_NAME=$PWD/src/lib/plumed-runtime make -C regtest/pycv/
+```
+
+
 
 
 Test
