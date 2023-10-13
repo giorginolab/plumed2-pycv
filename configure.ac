@@ -870,6 +870,8 @@ if sys.version_info < (3,):
   fi
 fi
 
+#############################################################
+# PYCV
 # If pycv module is enabled, we need python3, python3-config and
 # jaxlib, and we need to add LDFLAGS. The following may be useful too, but
 # looks overcomplicated to me:
@@ -879,10 +881,6 @@ if test -f src/pycv.on ; then
    AC_MSG_NOTICE([Performing PYCV-related checks])
    AC_PATH_PROG([pycv_python3],[python3],[missing])
    if test "$pycv_python3" == missing ; then
-      pycv_ok=false
-   fi
-   AC_PATH_PROG([pycv_python3_config],[python3-config],[missing])
-   if test "$pycv_python3_config" == missing ; then
       pycv_ok=false
    fi
    AC_MSG_CHECKING([support for PYCV required python modules (numpy)])
@@ -905,12 +903,22 @@ if test -f src/pycv.on ; then
       AC_MSG_WARN([disabling PYCV module; see possible reasons above])
       rm src/pycv.on
    else
-      pycv_embedding_ldflags=$("$pycv_python3_config" --embed --ldflags)
+      pycv_embedding_ldflags=$("$pycv_python3" -c 'import sysconfig; print(sysconfig.get_config_var("PY_LDFLAGS"))')
       AC_MSG_NOTICE([adding the following LDFLAGS for Python embedding: $pycv_embedding_ldflags])
       LDFLAGS="$LDFLAGS $pycv_embedding_ldflags"
-      pycv_embedding_cflags=$("$pycv_python3_config" --embed --cflags)
-      AC_MSG_NOTICE([adding the following CPPFLAGS for Python embedding: $pycv_embedding_cflags])
-      CPPFLAGS="$CPPFLAGS $pycv_embedding_cflags"
+      pycv_embedding_ldshared=$("$pycv_python3" -c 'import sysconfig; print(sysconfig.get_config_var("LINKFORSHARED"))')
+      AC_MSG_NOTICE([adding the following LDSHARED for Python embedding: $pycv_embedding_ldshared])
+      LDSHARED="$LDSHARED $pycv_embedding_ldshared"
+      pycv_embedding_cflags=$("$pycv_python3" -c 'import sysconfig; print(sysconfig.get_config_var("PY_CFLAGS"))')
+      AC_MSG_NOTICE([adding the following CFLAGS for Python embedding: $pycv_embedding_cflags])
+      CFLAGS="$CFLAGS $pycv_embedding_cflags"
+      pycv_embedding_includepy=$("$pycv_python3" -c 'import sysconfig; print(sysconfig.get_config_var("INCLUDEPY"))')
+      AC_MSG_NOTICE([adding the following INCLUDEPY for Python embedding: $pycv_embedding_includepy])
+      pycv_embedding_cppflags=$("$pycv_python3" -c 'import sysconfig; print(sysconfig.get_config_var("PY_CPPFLAGS"))')
+      AC_MSG_NOTICE([adding the following CPPFLAGS for Python embedding: $pycv_embedding_cppflags])
+      CPPFLAGS="$CPPFLAGS $CFLAGS $pycv_embedding_cppflags -I $pycv_embedding_includepy"
+      AC_MSG_NOTICE([final CPPFLAGS follows: $CPPFLAGS])
+      # Apparently this build system wants CPPFLAGS instead of CFLAGS
    fi
 fi		   
 
