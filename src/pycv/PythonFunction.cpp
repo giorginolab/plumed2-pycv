@@ -19,7 +19,7 @@ along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "core/PlumedMain.h"
 #include "colvar/Colvar.h"
-#include "colvar/ActionRegister.h"
+#include "core/ActionRegister.h"
 #include "tools/Pbc.h"
 #include "function/Function.h"
 
