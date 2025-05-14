@@ -1,6 +1,13 @@
 The PYCV module for PLUMED 2
 ====================================
 
+> [!WARNING]  
+> This repository accompanies an early version of PyCV (v1), described
+> in the paper in JOSS. A newer version of PyCV (v2) is now included in
+> plumed's main repository, as a plugin; the new version has the same scope but
+> a slightly different syntax and installation procedure. This repository
+> remains for historical preservation.
+
 Note: this is a fork of the official [PLUMED
 repository](https://github.com/plumed/plumed2). Please see [PLUMED's
 homepage](https://www.plumed.org/) for information on the PLUMED
