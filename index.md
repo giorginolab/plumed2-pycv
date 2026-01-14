@@ -17,9 +17,12 @@ Advantages of using PYCV over standard development of CVs in C++ are:
  3. CVs may be automatically differentiated in common cases.
 
 > [!WARNING]  
-> This page and the associated paper describe the first implementation of PYCV. Since PLUMED 2.9,
-> a newer variant of PYCV is distributed with PLUMED, albeit with a different syntax and installation
-> procedure. Please see [tutorial 24.015](http://www.plumed-tutorials.org/lessons/24/015/data/NAVIGATION.html).
+> This repository accompanies an early version of PyCV (v1), described
+> in the paper in JOSS. A newer version of PyCV (v2) is now included in
+> plumed's main repository, as a plugin; the new version has the same scope but
+> a slightly different syntax and installation procedure. This repository
+> remains for historical preservation.
+> Please see [tutorial 24.015](http://www.plumed-tutorials.org/lessons/24/015/data/NAVIGATION.html).
 > I recommend adapting your code to use the "official" PYCV, if possible.
 
 The code is organized as a standard PLUMED module: development occurs
